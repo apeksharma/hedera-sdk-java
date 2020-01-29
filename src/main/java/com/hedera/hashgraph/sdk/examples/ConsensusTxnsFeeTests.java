@@ -33,7 +33,6 @@ public class ConsensusTxnsFeeTests {
 
     private static final AccountId ACCOUNT_2 = AccountId.fromString("0.0.2");
     private static final Ed25519PrivateKey ACCOUNT_2_KEY = Ed25519PrivateKey.fromString("302e020100300506032b65700422042091132178e72057a1d7528025956fe39b0b847f200ab59b2fdd367017f3087137");
-    private static final Ed25519PublicKey OPERATOR_PUBKEY = Ed25519PublicKey.fromString("302a300506032b65700321000aa8e21064c61eab86e2a9c164565b4e7a9a4146106e0a6cd03a8c395a110e92");
     static Client client2;
 
     private static final String memoSize100 = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789";

@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
  * and {@link TransactionRecord#getContractExecuteResult()}.
  * <p>
  * If you require a type which is not supported here, please let us know on
- * <a href="https://github.com/hashgraph/hedera-sdk-java/issues/298>this Github issue</a>.
+ * this Github issue.
  */
 public final class ContractFunctionResult {
     private final ByteString rawResult;

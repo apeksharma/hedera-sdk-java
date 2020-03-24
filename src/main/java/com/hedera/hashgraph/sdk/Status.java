@@ -2,6 +2,8 @@ package com.hedera.hashgraph.sdk;
 
 import com.hedera.hashgraph.proto.ResponseCodeEnum;
 
+import java.util.Arrays;
+
 public enum Status {
     Ok(ResponseCodeEnum.OK),
     InvalidTransaction(ResponseCodeEnum.INVALID_TRANSACTION),
@@ -137,6 +139,10 @@ public enum Status {
         return responseCode.toString();
     }
 
+    boolean equalsAny(Status... statuses) {
+        return Arrays.asList(statuses).contains(this);
+    }
+
     static Status valueOf(ResponseCodeEnum responseCode) {
         switch (responseCode) {
             case OK: return Ok;
@@ -260,8 +266,14 @@ public enum Status {
             case AUTORENEW_ACCOUNT_NOT_ALLOWED: return AutorenewAccountNotAllowed;
             case TOPIC_EXPIRED: return TopicExpired;
 
+            case UNRECOGNIZED:
+                // protobufs won't give us the actual value that was unexpected, unfortunately
+                throw new IllegalArgumentException(
+                    "network returned unrecognized response code; your SDK may be out of date");
+
             default:
-                throw new IllegalArgumentException("unexpected response code: " + responseCode);
+                throw new IllegalArgumentException(
+                    "(BUG) unhandled response code: " + responseCode);
         }
     }
 }

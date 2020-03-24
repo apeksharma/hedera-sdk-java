@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  * Builder for encoding parameters for a Solidity contract constructor/function call.
  *
  * If you require a type which is not supported here, please let us know on
- * <a href="https://github.com/hashgraph/hedera-sdk-java/issues/298>this Github issue</a>.
+ * this Github issue.
  */
 public final class ContractFunctionParams {
     /**

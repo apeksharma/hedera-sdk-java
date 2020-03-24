@@ -52,7 +52,7 @@ public final class TransactionId {
     /**
      * Generate a transaction ID with a given account ID and valid start time.
      *
-     * <i>Nota bene</i>: executing transactions with the same ID (account ID & account start time)
+     * <i>Nota bene</i>: executing transactions with the same ID (account ID and account start time)
      * will throw {@link HederaStatusException} with code {@code DUPLICATE_TRANSACTION}.
      * <p>
      *
